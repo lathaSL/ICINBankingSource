@@ -1,0 +1,4 @@
+GitRepositoriesView.GitDirectories=C\:\\SREE\\Capstone\\ICIN_GIT\\apigateway\\.git;C\:\\SREE\\Capstone\\ICIN_GIT\\accountdtls\\.git;C\:\\SREE\\Capstone\\ICIN_GIT\\server_eureka\\.git;C\:\\SREE\\Capstone\\ICIN_GIT\\banking\\.git;
+GitRepositoriesView.GitDirectories.relative=apigateway\\.git;accountdtls\\.git;server_eureka\\.git;banking\\.git;
+core_autoIgnoreDerivedResources=false
+eclipse.preferences.version=1

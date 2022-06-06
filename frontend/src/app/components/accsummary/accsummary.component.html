@@ -1,0 +1,29 @@
+  <div class="row">
+    <div class="col-sm-2">
+        <app-userhome></app-userhome>
+        </div>
+        <div class="col-xl-9">
+          <table class="table table-striped">
+      <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Account Number</th>
+            <th scope="col">Account Type</th>
+            <th scope="col">Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let item of Accounts; let i=index;">
+            <td scope="row"> 
+            <input class="form-check-input" type="checkbox" 
+            value="{item}" id="items">
+            {{i+1}}
+            </td>
+            <td><a href="/transaction?id={{item.accountId}}">{{item.accountNo}}</a></td>
+            <td>{{ item.type }}</td>
+            <td>{{ item.balance }}</td>         
+          </tr>
+          </tbody>
+  </table>
+</div>
+</div>

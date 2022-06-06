@@ -1,0 +1,27 @@
+<div class="container">
+  <div [class.show]="false" *ngIf="!admin && !user" >
+
+    <app-home></app-home>
+
+  </div>
+  <div class="row"  [class.show]="false" *ngIf="user" >
+    <div class="col-sm-3"> 
+      <ul><li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/accsummary">Account Summary</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/accdep">Deposit/Withdraw</a>
+        </li>   
+        <li class="nav-item">
+            <a class="nav-link" href="/trans">Transfer Funds</a>
+        </li>   
+        <li class="nav-item">
+            <a class="nav-link" href="/benef">Maintain Beneficiary</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="reqChqBk()" >Request Cheque Book</a>
+        </li>
+      </ul> 
+      </div>   
+      
+</div>

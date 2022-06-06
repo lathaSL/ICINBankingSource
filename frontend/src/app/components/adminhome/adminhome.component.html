@@ -1,0 +1,19 @@
+<div class='container'>
+    <div [class.show]="false" *ngIf="!admin && !user" >
+
+      <app-home></app-home>
+
+    </div>
+    <div [class.show]="false" *ngIf="admin">
+        <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/account">Manage Accounts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/appchqreq">Approve cheque book requests</a>
+        </li>   
+        <li class="nav-item">
+            <a class="nav-link" href="/usrmgmt">Manage User Access</a>
+        </li>   
+      </ul>
+    </div>

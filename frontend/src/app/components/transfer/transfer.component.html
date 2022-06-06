@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-sm-2">
+      <app-userhome></app-userhome>
+      </div>
+      <div class="col-xl-9">
+              <p> Transfer Funds to other account</p>
+      <form [formGroup]="addForm" (ngSubmit)="submit()">
+
+      <div class="form-group">
+        <label for="name">Select Account </label>
+        <div class="input-group mb-3">
+          <select class="custom-select" formControlName="accountNo">
+            <option selected>Choose...</option>
+            <option *ngFor="let item of Accounts; let i= index;" value="{{item.accountId}}">
+              {{item.accountNo}} - {{item.type}}</option>
+          </select>
+          </div>
+          <div class="alert alert-error" *ngIf="addfrm['accountNo'].invalid && addfrm['accountNo'].touched">
+           <p> Select Account!</p>
+        </div>
+        <label for="name">Select Beneficiary A/C</label>
+        <div class="input-group mb-3">
+          <select class="custom-select" formControlName="benAcNo">
+            <option selected>Choose...</option>
+            <option *ngFor="let item of Beneficiaries; let i= index;" value="{{item.benId}}">
+              {{item.benAcNo}} - {{item.benName}}</option>
+          </select>
+          </div>   
+               <div class="alert alert-error" *ngIf="addfrm['benAcNo'].invalid && addfrm['benAcNo'].touched">
+           <p> Account number is required!</p>
+        </div>
+        <label for="name">Enter amount</label>
+        <input type="text" formControlName="amount" class="form-control"><br/><br/>
+        <div class="alert alert-error" *ngIf="addfrm['amount'].invalid && addfrm['amount'].touched">
+           <p> IFSC is required!</p>
+        </div>
+        <button class="btn btn-primary" type="submit">Transfer</button>
+        </div>
+        </form>
+    </div>
+
+</div>

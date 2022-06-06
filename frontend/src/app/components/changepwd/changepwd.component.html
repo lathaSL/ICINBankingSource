@@ -1,0 +1,45 @@
+<div ng-controller='myController' class="container">
+    <!-- <button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="showChangePwd()">Change Password</button> -->
+    <div [class.show]="false">
+        <form ngNoForm  [formGroup]="chgPwdForm" (ngSubmit)="changePassword()">
+          <div class="mb-3">
+            <label for="password" class="col-sm-2 col-form-label">Current Password</label>
+            <div class="col-sm-4">
+              <input type="password"  id="password" formControlName="password" class="form-control">
+            </div>
+            <div class="alert alert-error" *ngIf="frm['password'].invalid && frm['password'].touched">
+              <p> Password is required!</p>
+           </div>
+           
+          </div>
+          <div class="mb-3">
+            <label for="newpassword1" class="col-sm-2 col-form-label">New Password</label>
+            <div class="col-sm-4">
+              <input type="password"  id="newpassword1" formControlName="newpassword1" class="form-control">
+            </div>
+            <div class="alert alert-error" *ngIf="frm['newpassword1'].invalid && frm['newpassword1'].touched">
+              <p> Password is required!</p>
+           </div>
+           
+          </div>
+          <div class="mb-3">
+            <label for="newpassword2" class="col-sm-2 col-form-label">Retype new Password</label>
+            <div class="col-sm-4">
+              <input type="password"  id="newpassword2" formControlName="newpassword2" class="form-control">
+            </div>
+            <div class="alert alert-error" *ngIf="frm['newpassword2'].invalid && frm['newpassword2'].touched">
+              <p> Password is required!</p>
+           </div>
+           <div class="alert alert-error" *ngIf="frm['newpassword2'].value != frm['newpassword1'].value && frm['newpassword2'].touched">
+            <p> New Password should be matched!</p>
+         </div>
+          </div>
+
+          <div class="mb-3">  
+            <button [disabled]="frm['newpassword2'].value != frm['newpassword1'].value || frm['newpassword2'].invalid || frm['newpassword1'].invalid"  type="submit" class="col-sm-3 btn btn-primary mb-3">Change Password</button>
+            <button type="Reset" class="col-sm-1 btn btn-primary mb-3">Reset</button>
+
+          </div>
+          </form>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center">
+  <div class="container">
+<H1>Welcome to ICIN Banking service</H1>
+<H2></H2>
+Login: <a href="/user">New user</a>
+<div class="container-fluid m1-auto">
+    <form ngNoForm  [formGroup]="userForm" (ngSubmit)="login()">
+  
+    <div class="mb-3">
+    <label for="userName" class="col-sm-2 col-form-label">UserName</label>
+    <div class="col-sm-4">
+      <input type="text"  id="userName"  formControlName="userName" class="form-control">
+    </div>
+    <div class="alert alert-error" *ngIf="frm['userName'].invalid && frm['userName'].touched">
+      <p> Name is required!</p>
+   </div>
+  
+  </div>
+  <div class="mb-3">
+    <label for="password" class="col-sm-5 col-form-label">Password</label>
+    <div class="col-sm-4">
+      <input type="password"  id="password" formControlName="password" class="form-control">
+    </div>
+    <div class="alert alert-error" *ngIf="frm['password'].invalid && frm['password'].touched">
+      <p> Password is required!</p>
+   </div>
+   
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="col-sm-2 btn btn-primary mb-3">Login</button>
+  </div>
+  </form>
+  </div>
+</div>  
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-2">
+      <app-userhome></app-userhome>
+      </div>
+      <div class="col-xl-9">
+        <table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Account Number</th>
+          <th scope="col">Account Type</th>
+          <th scope="col">Trans. Date</th>
+          <th scope="col">From AC</th>
+          <th scope="col">To AC</th>
+          <th scope="col">Details</th>
+          <th scope="col">Trans. amount</th>
+          <th scope="col">Balance</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let item of transactions; let i=index;">
+          <td scope="row">           
+          {{i+1}}
+          </td>
+          <td>{{item.account.accountNo}}</td>
+          <td>{{ item.type }}</td>
+          <td>{{ item.transDate }}</td>
+          <td>{{ item.fromAC }}</td>
+          <td>{{ item.toAC }}</td>
+          <td>{{ item.details }}</td>
+          <td>{{ item.amount }}</td>
+          <td>{{ item.balance }}</td>         
+        </tr>
+  </table>
+  </div></div>

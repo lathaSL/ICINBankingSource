@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-sm-2">
+      <app-userhome></app-userhome>
+      </div>
+      <div class="col-xl-9">
+<div>
+  <form [formGroup]="addForm">
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Account Number</th>
+          <th scope="col">Account Type</th>
+          <th scope="col">Balance</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let item of Accounts; let i=index;">
+          <td>{{i+1}}</td>         
+          <td>{{item.accountNo}}</td>
+          <td>{{ item.type }}</td>
+          <td>{{ item.balance }}</td> 
+          <td> 
+                <div id="deposit_{{i+1}}">
+                  <input type="text" formControlName="amount{{i+1}}" class="form-control form-control-sm">
+                  </div>
+              </td>
+            <td> 
+              <button type="button" class="btn btn-sm btn-outline-primary mr-2"
+              (click)="deposit(item.accountId, i+1)">Deposit</button>
+              <button type="button" class="btn btn-sm btn-outline-primary mr-2"
+                        (click)="withdrawl(item.accountId, i+1)">Withdraw</button></td>
+
+        </tr>
+        
+
+  </table>
+</form></div>
+</div></div>
